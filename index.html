@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>No.js</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <a href="https://github.com/you"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+  <h1 class="logo center">No.js</h1>
+  
+  <div class="content">
+    <p>No.js is an extremely lightweight javascript library that makes you write no javascript at all.
+    All you'll need to add are html attributes instead and No.js does the magic for you.</p>
+
+    <p>No.js takes away the burden of repeatedly writing trivial UI related javascript code. You'd simply not write any javascript at all!
+    Hence the name "No.js"</p>
+    
+    <h3>USE CASE</h3>
+
+    <p>Imagine you are building an interactive page that does simple DOM manipulations in response to user interactions.</p>
+
+    <p>You want to add a <span class="italics code">css class</span> to some <span class="italics code">tag</span> when a user hovers on some other <span class="italics code">tag</span>. Here are the ways you may do it:</p>
+    
+    <p class="underline">With jQuery</p>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/11ksc1vu/3/embed/js,html,css,result/dark/"></script>
+    
+    <p class="underline">With vanilla javascript</p>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/v14pu30q/2/embed/js,html,css,result/dark/"></script>
+
+    <p class="underline">With No.js</p>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/h9nxpecy/2/embed/js,html,css,result/dark/"></script>
+
+
+    
+
+    <h3>WHY TO USE No.js</h3>
+
+    <p><b>1</b>. It saves the stress of writing any javascript at all. You may only need to write javascript code when you need to do things like number calculations, make ajax calls etc.</p>
+
+    <p><b>2</b>. You don't have to load a heavy libraries to do little DOM manipulations. No.js is very lightweight (1KB), this is probably as light as the vanilla javascript code you might have otherwise written.</p>
+
+    <p><b>3</b>. It is very intuitive and easy to understand. With a near english syntax.</p>
+
+    <p><b>4</b>. It encourages writing less Javascript and more CSS. With the ease of triggering class/attribute changes, it becomes easier to add interactive feedbacks to css classes, than writing javascript animations</p>
+
+    <p><b>5</b>. It does not require prior Javascript knowledge. You basically don't need any javascript knowledge to do DOM manipulations easily</p>
+
+    <h3>WHAT No.js DOESN'T DO</h3>
+
+    <p>No.js only helps with simple DOM manipulations like changing attribute, removing a DOM, etc. It doesn't help with
+    features like number calculations, making ajax calls etc. In this case you may need to add a different library to help
+    with it, or resort to vanilla javascript. </p>
+
+    <h3>INSTALLATION</h3>
+
+    <pre class="code">npm install nojs</pre>
+
+    or download <a href="">here</a>
+
+    <h3>FULL REFERENCE</h3>
+    <p>Every html tag that includes No.js tag attributes must also include the attribute <span class="code italics">no-js</span></p>
+
+    <p>All tag attributes take the form:</p>
+    <pre class="code">on--[eventType]--[action]--[propertyType]="[target] [propertyName(optional)] [propertyValue(optional)]"</pre>
+    <p>Where:</p>
+    <p>1. <span class="code italics">eventType</span> is any of <a href="https://developer.mozilla.org/en-US/docs/Web/Events">these javascript events</a></p>
+    <p>2. <span class="code italics">action</span> can either be <span class="code italics">add</span> or <span class="code italics">remove</span></p>
+    <p>3. <span class="code italics">propertyType</span> can be <span class="code italics">attribute</span>, <span class="code italics">class</span>, <span class="code italics">id</span> or <span class="code italics">dom</span></p>
+    
+    <br>
+    <h4>Here is a list of all possible tag instructions:</h4>
+
+    <p class="underline">Remove/Add attributes</p>
+    <pre class="code">on--[eventType]--add--attribute="[target] [attributeName] [attributeValue]"</pre>
+
+    <pre class="code">on--[eventType]--remove--attribute="[target] [attributeName]"</pre>
+
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/df8cod1d/1/embed/html,css,js,result/dark/"></script>
+
+    <p class="underline">Remove/Add classes</p>
+    <pre class="code">on--[eventType]--add--class="[target] [className]"</pre>
+
+    <pre class="code">on--[eventType]--remove--class="[target] [className]"</pre>
+
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/atjL8ft6/1/embed/html,css,js,result/dark/"></script>
+
+    <p class="underline">Remove/Add id</p>
+    <pre class="code">on--[eventType]--add--id="[target] [idValue]"</pre>
+
+    <pre class="code">on--[eventType]--remove--id="[target]"</pre>
+
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/81dmL9z8/2/embed/html,css,js,result/dark/"></script>
+    
+    <p class="underline">Remove DOM</p>
+    <pre class="code">on--[eventType]--remove--dom="[target]"</pre>
+
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/o1eja4v7/2/embed/html,css,js,result/dark/"></script>
+
+    <br>
+    <br>
+    <br>
+    <p>This is a new library and has plenty room for improvement. Please report issues <a href="https://github.com/ifedapoolarewaju/nojs/issues" target="_blank">here</a>.</p>
+    <p>Also feel free to send in Pull Requests. :)</p>
+  </div>
+</body>
+</html>
