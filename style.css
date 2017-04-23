@@ -3,6 +3,10 @@ body {
   line-height: 25px;
 }
 
+a {
+  color: #666;
+}
+
 .logo {
   font-family: fantasy;
   font-weight: 800;
