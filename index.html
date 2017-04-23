@@ -3,38 +3,48 @@
 <head>
   <title>No.js</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="canonical" href="https://ifedapoolarewaju.github.io/nojs-site/">
+  <link rel="icon" href="icon.png" type="image/x-icon">
 </head>
 <body>
   <a href="https://github.com/ifedapoolarewaju/nojs" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
   <h1 class="logo center">No.js</h1>
+  <div class="center">
+    <iframe src="https://ghbtns.com/github-btn.html?user=ifedapoolarewaju&repo=nojs&type=star&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Perform%20DOM%20manipulations%20without%20a%20line%20of%20javascript">Tweet</a>
+  </div>
   
   <div class="content">
-    <p>No.js is an extremely lightweight javascript library that makes you write no javascript at all.
+
+    <p>No.js is an extremely lightweight javascript library that makes you do DOM manipulations without writing any javascript at all.
     All you'll need to add are html attributes instead and No.js does the magic for you.</p>
 
     <p>No.js takes away the burden of repeatedly writing trivial UI related javascript code. You'd simply not write any javascript at all!
     Hence the name "No.js"</p>
-    
+
+    <p class="italics">(Please note that even though No.js allows you write no javascript, No.js itself is written in Javascript.)</p>
+
     <h3>USE CASE</h3>
 
     <p>Imagine you are building an interactive page that does simple DOM manipulations in response to user interactions.</p>
 
     <p>You want to add a <span class="italics code">css class</span> to some <span class="italics code">tag</span> when a user hovers on some other <span class="italics code">tag</span>. Here are the ways you may do it:</p>
-    
+
     <p class="underline">With jQuery</p>
     <script async src="https://jsfiddle.net/ifedapoolarewaju/11ksc1vu/4/embed/js,html,css,result/dark/"></script>
-    
+
     <p class="underline">With vanilla javascript</p>
     <script async src="https://jsfiddle.net/ifedapoolarewaju/v14pu30q/3/embed/js,html,css,result/dark/"></script>
 
     <p class="underline">With No.js</p>
-    <script async src="https://jsfiddle.net/ifedapoolarewaju/h9nxpecy/3/embed/js,html,css,result/dark/"></script>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/h9nxpecy/5/embed/js,html,css,result/dark/"></script>
 
 
-    
 
-    <h3>WHY TO USE No.js</h3>
+
+    <h3>WHY USE No.js?</h3>
 
     <p><b>1</b>. It saves the stress of writing any javascript at all. You may only need to write javascript code when you need to do things like number calculations, make ajax calls etc.</p>
 
@@ -66,62 +76,144 @@
     <p>Every html tag that includes No.js tag attributes must also include the attribute <span class="code italics">no-js</span></p>
 
     <p>All tag attributes take the form:</p>
-    <pre class="code">on--[eventType]--[action]--[propertyType]="[target] [propertyName(optional)] [propertyValue(optional)]"</pre>
+    <pre class="code">on-[eventType]-[action]-[propertyType]="[target] [propertyName(optional)] [propertyValue(optional)]"</pre>
     <p>Where:</p>
     <p>1. <span class="code italics">eventType</span> is any of <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">these javascript events</a></p>
-    <p>2. <span class="code italics">action</span> can either be <span class="code italics">add</span> or <span class="code italics">remove</span></p>
-    <p>3. <span class="code italics">propertyType</span> can be <span class="code italics">attribute</span>, <span class="code italics">class</span>, <span class="code italics">id</span> or <span class="code italics">dom</span></p>
-    
+    <p>
+      2. <span class="code italics">action</span> can either be <span class="code italics">add, remove, set, reset, toggle</span> or <span class="code italics">switch</span>
+    </p>
+    <p>3. <span class="code italics">propertyType</span> can be <span class="code italics">attribute, class, id, text, value</span> or <span class="code italics">dom</span></p>
+
     <br>
     <h4>Here is a list of all possible tag instructions:</h4>
 
-    <p class="underline">Remove/Add attributes</p>
-    <pre class="code">on--[eventType]--add--attribute="[target] [attributeName] [attributeValue]"</pre>
+    <a class="underline" id="attributes" href="#attributes">Remove/Set attributes</a>
+    <pre class="code">on-[eventType]-set-attribute="[target] [attributeName] [attributeValue]"</pre>
 
-    <pre class="code">on--[eventType]--remove--attribute="[target] [attributeName]"</pre>
-
-    <p>Example:</p>
-
-    <script async src="https://jsfiddle.net/ifedapoolarewaju/df8cod1d/4/embed/html,css,js,result/dark/"></script>
-
-    <p class="underline">Remove/Add classes</p>
-    <pre class="code">on--[eventType]--add--class="[target] [className]"</pre>
-
-    <pre class="code">on--[eventType]--remove--class="[target] [className]"</pre>
+    <pre class="code">on-[eventType]-remove-attribute="[target] [attributeName]"</pre>
 
     <p>Example:</p>
 
-    <script async src="https://jsfiddle.net/ifedapoolarewaju/atjL8ft6/2/embed/html,css,js,result/dark/"></script>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/df8cod1d/5/embed/html,css,js,result/dark/"></script>
 
-    <p class="underline">Remove/Add id</p>
-    <pre class="code">on--[eventType]--add--id="[target] [idValue]"</pre>
+    <br>
+    <br>
+    <br>
 
-    <pre class="code">on--[eventType]--remove--id="[target]"</pre>
+    <a id="classes" href="#classes" class="underline">Remove/Add/Set/Toggle/Switch classes</a>
+    <pre class="code">on-[eventType]-add-class="[target] [className]"</pre>
+
+    <pre class="code">on-[eventType]-set-class="[target] [className]"</pre>
+
+    <pre class="code">on-[eventType]-remove-class="[target] [className]"</pre>
+
+    <pre class="code">on-[eventType]-toggle-class="[target] [className]"</pre>
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/atjL8ft6/5/embed/html,css,js,result/dark/"></script>
+    <br>
+    <br>
+    <pre class="code">on-[eventType]-switch-class="[target] [className]"</pre>
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/pu75pm72/2/embed/html,css,js,result/dark/"></script>
+
+    <br>
+    <br>
+    <br>
+
+    <a href="#ids" id="ids" class="underline">Remove/Set id</a>
+    <pre class="code">on-[eventType]-set-id="[target] [idValue]"</pre>
+
+    <pre class="code">on-[eventType]-remove-id="[target]"</pre>
 
     <p>Example:</p>
 
-    <script async src="https://jsfiddle.net/ifedapoolarewaju/81dmL9z8/3/embed/html,css,js,result/dark/"></script>
-    
-    <p class="underline">Remove DOM</p>
-    <pre class="code">on--[eventType]--remove--dom="[target]"</pre>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/81dmL9z8/4/embed/html,css,js,result/dark/"></script>
+
+    <br>
+    <br>
+    <br>
+
+    <a id="dom" href="#dom" class="underline">Remove DOM</a>
+    <pre class="code">on-[eventType]-remove-dom="[target]"</pre>
 
     <p>Example:</p>
 
-    <script async src="https://jsfiddle.net/ifedapoolarewaju/o1eja4v7/3/embed/html,css,js,result/dark/"></script>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/o1eja4v7/4/embed/html,css,js,result/dark/"></script>
 
-    <p class="underline">Target the current tag</p>
-    In the situation where the target element is the same as the origination element, you simply add the <span class="italics code">--self</span> suffix to the attribute and exclude the target from the arguments like so.
+    <br>
+    <br>
+    <br>
 
-    <pre class="code">on--[eventType]--add--class--self="[className]"</pre>
+    <a id="value" href="#value" class="underline">Set/Reset value</a>
+    <pre class="code">on-[eventType]-set-value="[form input target] [value]"</pre>
+
+    <pre class="code">on-[eventType]-reset-value="[form input target]"</pre>
 
     <p>Example:</p>
 
-    <script async src="https://jsfiddle.net/ifedapoolarewaju/85bvcm3d/2/embed/html,css,js,result/dark/"></script>
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/n71mhomg/2/embed/html,css,js,result/dark/"></script>
+
+    <br>
+    <br>
+    <br>
+
+    <a id="text" href="#text" class="underline">Set text</a>
+    <pre class="code">on-[eventType]-set-text="[target] [textValue]"</pre>
+
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/bwytj32c/1/embed/html,css,js,result/dark/"></script>
+
+    <br>
+    <br>
+    <br>
+
+    <a id="self" href="#self" class="underline">Target the current tag</a>
+    In the situation where the target element is the same as the origination element, you simply add the <span class="italics code">-self</span> suffix to the attribute and exclude the target from the arguments like so.
+
+    <pre class="code">on-[eventType]-add-class-self="[className]"</pre>
+
+    <p>Example:</p>
+
+    <script async src="https://jsfiddle.net/ifedapoolarewaju/85bvcm3d/3/embed/html,css,js,result/dark/"></script>
     <br>
     <br>
     <br>
     <p>This is a new library and has plenty room for improvement. Please report issues <a href="https://github.com/ifedapoolarewaju/nojs/issues" target="_blank">here</a>.</p>
     <p>Also feel free to send in Pull Requests. :)</p>
+
+    <br>
+    <br>
+    <br>
+    <div class="center">
+      <p class="italics">Is this project something you like? Feel free to STAR it on GITHUB or share it on twitter. It would mean a ton! :)</p>
+      <iframe src="https://ghbtns.com/github-btn.html?user=ifedapoolarewaju&repo=nojs&type=star&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+
+      <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Perform%20DOM%20manipulations%20without%20a%20line%20of%20javascript">Tweet</a>
+    </div>
   </div>
+
+  <footer class="center">&copy; 2017</footer>
+
+  <script async>
+    window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+  }(document, "script", "twitter-wjs"));
+  </script>
 </body>
 </html>
